@@ -113,10 +113,11 @@ npm install --save-dev @stoplight/spectral-core
 ```
 
 
-
+ln -s pre-commit.sh .git/hooks/pre-commit
 
 
 ## Configuración
+
 
 
 ### Implementar comando de análisis de todos los ejemplos
