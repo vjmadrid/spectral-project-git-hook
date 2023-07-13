@@ -207,6 +207,7 @@ ls -la .git/hooks
 ln -sf ./git-hooks/pre-commit .git/hooks/pre-commit
 ```
 
+
 6. Verificar que SÍ existe ningun enlace a pre-commit
 
 ```bash
