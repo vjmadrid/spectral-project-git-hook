@@ -116,6 +116,7 @@ npm install --save-dev @stoplight/spectral-core
 ln -s pre-commit.sh .git/hooks/pre-commit
 
 
+
 ## Configuración
 
 
