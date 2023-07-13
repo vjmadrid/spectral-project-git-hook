@@ -2,15 +2,20 @@
 
 # Configuration
 HOOK_NAME="pre-commit"
-HOOK_NAME_FILE=$HOOK_NAME
+HOOK_NAME_FILE="$HOOK_NAME"
 BASE_DIR=$(git rev-parse --show-toplevel)
-HOOK_DIR="$BASEDIR/.git/hooks"
+HOOK_DIR="$BASE_DIR/.git/hooks"
+
+echo "Configuration"
+echo "- Git Hook: $HOOK_NAME"
+echo "- Git Hook Directory: $HOOK_DIR"
+echo "- Base Directory: $BASE_DIR"
 
 # Set the execution permission for the pre-commit hook file
 chmod +x "$HOOK_NAME_FILE"
 
-# Move the pre-commit hook file to the hooks directory
-mv "$HOOK_NAME_FILE" "$HOOK_DIR/pre-commit"
+# Copy the pre-commit hook file to the hooks directory
+cp "./$HOOK_NAME_FILE" "$HOOK_DIR/pre-commit"
 
 # Inform the user about the successful installation
 echo "Pre-commit Git Hook installed successfully!"
