@@ -1,3 +1,4 @@
+#!/bin/bash
 #git stash -q --keep-index
 
 # Testing
