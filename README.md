@@ -16,6 +16,8 @@
 - [Configuración](#configuración)
   - [Implementar comando de análisis de todos los ejemplos](#implementar-comando-de-análisis-de-todos-los-ejemplos)
 - [Uso](#uso)
+  - [Crear el hook directamente](#crear-el-hook-directamente)
+  - [Crear](#crear)
 - [Autor](#autor)
 
 
@@ -140,8 +142,6 @@ Detalle:
 
 
 
-git config core.hooksPath git-hooks
-ln -sf ./git-hooks/pre-commit .git/hooks/pre-commit
 
 
 
@@ -150,6 +150,43 @@ ln -sf ./git-hooks/pre-commit .git/hooks/pre-commit
 >**Nota:**
 >
 >Todos los ejemplos harán uso de la configuración de spectral de **.spectral.yml**
+
+### Crear el hook directamente
+
+
+### Crear
+
+1. Arrancar un terminal
+2. Localizar el PATH el directorio del proyecto
+3. Ejecutar el siguiente comando
+
+```bash
+git config core.hooksPath git-hooks
+```
+
+para deshacer el cambio 
+
+
+```
+git config --unset core.hooksPath
+```
+
+```
+git config core.hooksPath .git/hooks
+```
+
+
+
+
+
+A partir de la versión 2.9 se puede cambiar el directorio de configuración donde buscar los hooks
+
+Para versiones anteriores de Git se pueden crear enlaces simbolicos entre el directorio ./git/hooks y el nuevo directorio de trabajo
+
+4. SE
+
+
+ln -sf ./git-hooks/pre-commit .git/hooks/pre-commit
 
 
 
