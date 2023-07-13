@@ -6,6 +6,8 @@
 BASEDIR=$(git rev-parse --show-toplevel)
 SCRIPTNAME=$(basename $0)
 
+echo "[*] Create the symlinks for $SCRIPTNAME"
+
 # look for local hook and run it
 if [ -x $BASEDIR/.git/hooks/$SCRIPTNAME.local ]; then
     echo "Running $0.local"
@@ -15,5 +17,5 @@ fi
 # look for repository-based hook and run it
 if [ -x $BASEDIR/git-hooks/$SCRIPTNAME ]; then
     echo "Running $BASEDIR/git-hooks/$SCRIPTNAME"
-    $BASEDIR/git-hooks/$SCRIPTNAME "$@" || exit $?
+    ../$BASEDIR/git-hooks/$SCRIPTNAME "$@" || exit $?
 fi

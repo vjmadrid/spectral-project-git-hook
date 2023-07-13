@@ -16,7 +16,7 @@
 - [Configuración](#configuración)
   - [Implementar comando de análisis de todos los ejemplos](#implementar-comando-de-análisis-de-todos-los-ejemplos)
 - [Uso](#uso)
-  - [Crear el hook directamente](#crear-el-hook-directamente)
+  - [Creación de un Git Hook: script ad-hoc](#creación-de-un-git-hook-script-ad-hoc)
   - [Crear](#crear)
     - [Para deshacer el cambio](#para-deshacer-el-cambio)
   - [Crear](#crear-1)
@@ -151,11 +151,48 @@ versionar los hooks en un repositorio separado y suministrar un script para conf
 
 ## Uso
 
+Se va a inter definir un scrip de Git Hook para la operativa de pre-commit que se encargue de :
+
+* Ejecutar los test configurados en el proyecto
+* Ejecutar una operativa de lintado con Spectral
+
 >**Nota:**
 >
 >Todos los ejemplos harán uso de la configuración de spectral de **.spectral.yml**
 
-### Crear el hook directamente
+
+### Creación de un Git Hook: script ad-hoc
+
+En este caso se va crear directamente el script de Git Hook
+
+Pasos a seguir:
+
+1. Abrir el directorio **.git/hooks** del respositorio seleccionado
+2. Localizar el archivo de ejemplo del hooks que se quiere implementar
+3. Eliminar la parte ".sample" del nombre del hook o bien crear un archivo nuevo
+4. Verificar el que el nombre del hook se corresponde con uno de los considerados validos. Por ejemplo: "pre-commit"
+5. Cambiar los permisos de ejecución del archivo
+
+```bash
+# Ejemplo para "pre-commit" desde el directorio
+chmod +x pre-commit
+
+# Ejemplo para "pre-commit" sobre el directorio
+chmod +x .git/hooks/pre-commit
+```
+
+6. Verificar que tiene el permiso asignado
+
+```bash
+ls -la .git/hooks
+```
+
+8. Elegir el lenguaje de scripting que se quiere utilizar para implementar el hook (Python, bash, shell, etc.)
+9. Editar el archivo con la implementación seleccionada
+
+
+
+
 
 
 ### Crear
