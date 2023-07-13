@@ -40,6 +40,8 @@ Este directorio se compone de:
 * **src/**: Directorio que contiene código para una supuesta aplicación de calculadora
   * Nota: En este caso NO será necesario utilizar el código implementado para realizar un API, sino que servirá de ejemplo para usar fase de testing en posteriores ejemplos
 * **tests/**: Directorio que contiene test unitarios / integración sobre código implementado en el directorio "src/"
+* **docs/**: Directorio que contiene cierta documentación del proyecto
+
 
 
 
@@ -143,18 +145,19 @@ Detalle:
 * **spectral:oas:lint-warning-as-errors**: Análisis de Spectral sobre todos los ficheros del directorio examples/ generando un error al detectar al menos un warning, es decir, para la ejecución con un warning
 
 
-Una buena forma de facilitar a otros la configuración de su repositorio es incluir un script en el repositorio que cree la configuración necesaria. Esto es especialmente cierto si desea configurar más de un enlace simbólico o realizar otros comandos para los nuevos usuarios del repositorio.
 
-versionar los hooks en un repositorio separado y suministrar un script para configurar el repositorio del proyecto para usar este repositorio como su directorio de hooks. De cualquier manera se asegura de que los ganchos son de versión controlada y más fácil de compartir a través de un equipo que sólo puede ser un positivo.
 
 
 
 ## Uso
 
-Se va a inter definir un scrip de Git Hook para la operativa de pre-commit que se encargue de :
+Se va a intentar definir un scrip de Git Hook para la operativa de pre-commit que se encargue de :
 
 * Ejecutar los test configurados en el proyecto
 * Ejecutar una operativa de lintado con Spectral
+
+La propuesta del script se encuentra en : **docs/pre-commit.txt**
+
 
 >**Nota:**
 >
