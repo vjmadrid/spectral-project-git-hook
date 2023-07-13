@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "*** pre-commit **"
+
 #git stash -q --keep-index
 
 # Testing
