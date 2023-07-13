@@ -143,7 +143,9 @@ Detalle:
 * **spectral:oas:lint-warning-as-errors**: Análisis de Spectral sobre todos los ficheros del directorio examples/ generando un error al detectar al menos un warning, es decir, para la ejecución con un warning
 
 
+Una buena forma de facilitar a otros la configuración de su repositorio es incluir un script en el repositorio que cree la configuración necesaria. Esto es especialmente cierto si desea configurar más de un enlace simbólico o realizar otros comandos para los nuevos usuarios del repositorio.
 
+versionar los hooks en un repositorio separado y suministrar un script para configurar el repositorio del proyecto para usar este repositorio como su directorio de hooks. De cualquier manera se asegura de que los ganchos son de versión controlada y más fácil de compartir a través de un equipo que sólo puede ser un positivo.
 
 
 
@@ -212,7 +214,6 @@ ls -la .git/hooks
 ```
 
 
-4. SE
 
 
 
