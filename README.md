@@ -18,6 +18,8 @@
 - [Uso](#uso)
   - [Crear el hook directamente](#crear-el-hook-directamente)
   - [Crear](#crear)
+    - [Para deshacer el cambio](#para-deshacer-el-cambio)
+  - [Crear](#crear-1)
 - [Autor](#autor)
 
 
@@ -156,37 +158,64 @@ Detalle:
 
 ### Crear
 
+A partir de la versión 2.9 se puede cambiar el directorio de configuración donde buscar los hooks
+
+Pasos a seguir:
+
 1. Arrancar un terminal
 2. Localizar el PATH el directorio del proyecto
-3. Ejecutar el siguiente comando
+3. Verificar que el directorio "git-hooks" existe
+4. Ejecutar el siguiente comando
 
 ```bash
-git config core.hooksPath git-hooks
+git config core.hooksPath ./git-hooks
 ```
 
-para deshacer el cambio 
+#### Para deshacer el cambio
 
 
-```
+```bash
 git config --unset core.hooksPath
 ```
 
-```
+```bash
 git config core.hooksPath .git/hooks
 ```
 
 
 
-
-
-A partir de la versión 2.9 se puede cambiar el directorio de configuración donde buscar los hooks
+### Crear
 
 Para versiones anteriores de Git se pueden crear enlaces simbolicos entre el directorio ./git/hooks y el nuevo directorio de trabajo
+
+Pasos a seguir:
+
+1. Arrancar un terminal
+2. Localizar el PATH el directorio del proyecto
+3. Verificar que el directorio "git-hooks" existe
+4. Verificar que NO existe ningun enlace a pre-commit
+
+```bash
+ls -la .git/hooks
+```
+
+5. Ejecutar el siguiente comando
+
+```bash
+ln -sf ./git-hooks/pre-commit .git/hooks/pre-commit
+```
+
+6. Verificar que SÍ existe ningun enlace a pre-commit
+
+```bash
+ls -la .git/hooks
+```
+
 
 4. SE
 
 
-ln -sf ./git-hooks/pre-commit .git/hooks/pre-commit
+
 
 
 
