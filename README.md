@@ -17,6 +17,7 @@
   - [Implementar comando de análisis de todos los ejemplos](#implementar-comando-de-análisis-de-todos-los-ejemplos)
 - [Uso](#uso)
   - [Creación de un Git Hook: script ad-hoc](#creación-de-un-git-hook-script-ad-hoc)
+  - [Creación de un Git Hook: script enlazado](#creación-de-un-git-hook-script-enlazado)
   - [Crear](#crear)
     - [Para deshacer el cambio](#para-deshacer-el-cambio)
   - [Crear](#crear-1)
@@ -194,6 +195,32 @@ ls -la .git/hooks
 9. Editar el archivo con la implementación seleccionada
 
 
+
+
+### Creación de un Git Hook: script enlazado
+
+Soluciona el problema de la confirmacion anterior
+
+Pasos a seguir:
+
+1 Crear un directorio **git-hooks/** en el proyecto
+2 Copiar el archivo hook seleccionado del directorio **.git/hooks/** sin ".sample" o bien crea un fichero nuevo con el nombre del hook
+3.Acceder a **.git/hooks/**
+4. Crear un nuevo archivo vacío con el mismo nombre
+5. Crear un enlace símbolico entre ellos con el siguiente comando
+
+```bash
+ln -s -f ../git-hooks/[hook-name] .git/hooks/[hook-name]
+
+# Ejemplo para "pre-commit"
+ln -s -f ../git-hooks/pre-commit .git/hooks/pre-commit
+```
+
+6. Verificar que se ha creado el enlace simbólico
+
+```bash
+ls -la .git/hooks
+```
 
 
 

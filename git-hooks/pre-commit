@@ -1,23 +1,36 @@
 #!/bin/sh
-echo "*** pre-commit ***"
 
-echo "$PWD"
+echo "[*] Running pre-commit Git hook"
+#echo "$PWD"
 
-echo "[*] Testing"
+
+# ***************
+#    Testing
+# ***************
+
+echo "- Testing"
+
+#Option 1: Execute command
 #npm run test
 
+#Option 2: Execute script
 ./scripts/run-tests.sh
-
-echo "$PWD"
 
 RESULT=$?
 [ $RESULT -ne 0 ] && exit 1
 
 
-echo "[*] OAS Lint"
 
+# ********************
+#    Spectral Lint
+# ********************
+
+echo "- Spectral OAS Lint"
+
+#Option 1: Execute command
 npm run spectral:oas:lint:one
 
 RESULT=$?
 [ $RESULT -ne 0 ] && exit 1
+
 exit 0
