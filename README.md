@@ -140,6 +140,9 @@ Detalle:
 
 
 
+git config core.hooksPath git-hooks
+ln -sf ./git-hooks/pre-commit .git/hooks/pre-commit
+
 
 
 ## Uso
