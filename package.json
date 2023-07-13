@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "./scripts/prepare.sh",
     "clean": "rm -rf package-lock.json && npm install",
     "node:version": "echo 'nodejs version: ' && node -v ",
     "test": "jest",
