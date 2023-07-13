@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 echo "*** pre-commit ***"
 
 #git stash -q --keep-index
