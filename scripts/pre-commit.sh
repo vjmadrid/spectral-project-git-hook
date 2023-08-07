@@ -1,4 +1,4 @@
-#!/bin/sh
+!/bin/sh
 
 echo "[*] Running pre-commit Git hook"
 #echo "$PWD"
