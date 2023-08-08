@@ -1,6 +1,6 @@
-!/bin/sh
+#!/bin/sh
 
-echo "[*] Running pre-commit Git hook"
+echo "[*] Running pre-commit Git Hook (script directory)"
 #echo "$PWD"
 
 

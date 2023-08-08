@@ -42,7 +42,8 @@ Este directorio se compone de:
   * Nota: En este caso NO será necesario utilizar el código implementado para realizar un API, sino que servirá de ejemplo para usar fase de testing en posteriores ejemplos
 * **tests/**: Directorio que contiene test unitarios / integración sobre código implementado en el directorio "src/"
 * **docs/**: Directorio que contiene cierta documentación del proyecto
-
+* **scripts/**: Directorio que contiene ciertos scripts que pueden ayudar a usar ciertos acciones de la aplicación, en su instalación, en la preparación del entorno o bien ayudar en el ciclo de desarrollo
+* **git-hooks/**: Directorio que contiene referncias de los Git Hooks y que se distribuirán junto con la aplicación, posteriormente se podrán activar de diferentes maneras
 
 
 
