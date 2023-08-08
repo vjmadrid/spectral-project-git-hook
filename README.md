@@ -43,6 +43,10 @@ Este directorio se compone de:
 * **tests/**: Directorio que contiene test unitarios / integración sobre código implementado en el directorio "src/"
 * **docs/**: Directorio que contiene cierta documentación del proyecto
 * **scripts/**: Directorio que contiene ciertos scripts que pueden ayudar a usar ciertos acciones de la aplicación, en su instalación, en la preparación del entorno o bien ayudar en el ciclo de desarrollo
+  * Ejemplos
+    * Ejecución de test
+    * Lintado con Spectral
+    * Operativa de Build del proyecto
 * **git-hooks/**: Directorio que contiene referncias de los Git Hooks y que se distribuirán junto con la aplicación, posteriormente se podrán activar de diferentes maneras
 
 
