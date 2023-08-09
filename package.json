@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "prepare": "./scripts/prepare.sh",
+    "prepare:githooks:script": "./scripts/prepare-npm-run.sh",
+    "prepare:githooks:config": "git config core.hooksPath git-hooks",
+    "postinstall": "git config core.hooksPath git-hooks",
     "clean": "rm -rf package-lock.json && npm install",
     "node:version": "echo 'nodejs version: ' && node -v ",
     "test": "jest",
