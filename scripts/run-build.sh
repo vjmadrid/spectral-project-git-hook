@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Execution
 echo "Running Build"
 sh run-tests.sh
 
@@ -13,5 +14,7 @@ if [[ $(git diff --cached --exit-code) ]];then
   BRANCH_NAME=$(git branch --show-current)
   STASH_NAME="pre-commit-on-$BRANCH_NAME-$(date +"%m-%d-%y::%T")"
   git stash save -q --keep-index $STASH_NAME
-  echo "Stash:${STASH_NAME} saved!"       
+  echo "Stash:${STASH_NAME} saved!"
 fi
+
+exit 0
