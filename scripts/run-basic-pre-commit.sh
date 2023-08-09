@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo "This runs before your commits!!!"
+echo "[scripts directory] This runs before your commits!!!"
