@@ -47,6 +47,8 @@ Este directorio se compone de:
     * Ejecución de test
     * Lintado con Spectral
     * Operativa de Build del proyecto
+    * ...
+  * Recordar de proporcionar permisos de ejecución: chmod +x XXX
 * **git-hooks/**: Directorio que contiene referncias de los Git Hooks y que se distribuirán junto con la aplicación, posteriormente se podrán activar de diferentes maneras
 
 
