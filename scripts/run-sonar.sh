@@ -20,4 +20,6 @@ if [ "$QUALITY_GATE" != "\"$SONAR_QG_STATUS\"" ]; then
   exit 1
 fi
 
-exit 0
+status=$?
+
+exit $status
