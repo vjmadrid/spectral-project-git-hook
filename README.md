@@ -119,7 +119,6 @@ npm install
 5. Verificar que se ha instalado todo correctamente
 
 
-
 ln -s pre-commit.sh .git/hooks/pre-commit
 
 
