@@ -3,7 +3,7 @@
 # Execution
 echo "Executing project preparation tasks"
 
-echo "[*] Prepare 'pre-commit' Git Hook"
-npm run prepare:githooks:adhoc:pre-commit
+echo "[*] Prepare 'core.hooksPath' Git Hook"
+git config core.hooksPath ../git-hooks
 
 echo "Project preparation successfully!"
