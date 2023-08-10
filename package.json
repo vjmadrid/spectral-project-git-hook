@@ -7,7 +7,7 @@
     "clean": "rm -rf package-lock.json && npm install",
     "node:version": "echo 'nodejs version: ' && node -v ",
     "prepare:githooks:adhoc:pre-commit": "cp ./scripts/pre-commit .git/hooks/ && chmod +x .git/hooks/pre-commit && echo 'pre-commit hook copied!'",
-    "prepare:githooks:link:all": "for file in `ls git-hooks`; do ln -sf ../../git-hooks/${file} .git/hooks/${file}; done",
+    "prepare:githooks:link:all": "for file in `ls git-hooks`; do ln -s -f ../../git-hooks/${file} .git/hooks/${file}; done",
     "prepare:githooks:script": "./scripts/prepare-npm-run.sh",
     "prepare:githooks:config": "git config core.hooksPath git-hooks",
     "prepare:githooks:config:reset": "git config core.hooksPath no-hooks",
