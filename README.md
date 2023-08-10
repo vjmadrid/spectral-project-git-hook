@@ -131,6 +131,7 @@ ln -s pre-commit.sh .git/hooks/pre-commit
 
 
 
+
 ### Implementar comando de análisis de todos los ejemplos
 
 Pasos a seguir:
