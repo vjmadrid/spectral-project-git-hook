@@ -128,7 +128,6 @@ ln -s pre-commit.sh .git/hooks/pre-commit
 
 
 
-
 ## Configuración
 
 
@@ -149,6 +148,7 @@ Pasos a seguir:
     ...
   },
 ```
+
 
 Detalle:
 
