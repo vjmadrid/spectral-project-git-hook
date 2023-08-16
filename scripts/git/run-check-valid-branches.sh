@@ -1,6 +1,7 @@
 #!/bin/sh
 
-# Configuration
+# ### Configuration ###
+
 # Define patterns
 FORBIDDEN_BRANCHES_PATTERN="^(master|dev|release)$"
 
@@ -10,7 +11,7 @@ MESSAGE="You should not commit directly into ${BRANCH_NAME} branch"
 
 
 
-# Execution
+# ### Execution ###
 echo "Running Check Valid Branches"
 
 # Check if the branch name matches the forbidden branches pattern

@@ -1,10 +1,12 @@
 #!/bin/sh
 
-# Configuration
+# ### Configuration ###
 MESSAGE=$(cat $1)
 COMMIT_FORMAT_PATTERN="^(feat|fix|docs|style|refactor|test|chore|perf|other)(\((.*)\))?: #([0-9]+) (.*)$"
 
-# Execution
+
+
+# ### Execution ###
 echo "Running Check Commit Message"
 
 if ! [[ "$MESSAGE" =~ $COMMITFORMAT ]]; then

@@ -1,8 +1,11 @@
 #!/bin/bash
 
-# Configuration
+# ### Configuration ###
 BASE_DIR=$(git rev-parse --show-toplevel)
 
+
+
+# ### Execution ###
 echo -e "Executing project preparation tasks"
 
 echo "  Configuration"
@@ -13,3 +16,4 @@ echo -e "\n[*] Preparing Git Hooks ..."
 source "$BASE_DIR/git-hooks/install-pre-commit-git-hook.sh"
 
 echo "Project preparation successfully!"
+exit 0
