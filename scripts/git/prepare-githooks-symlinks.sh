@@ -21,5 +21,5 @@ echo "Executing prepare ALL Git Hooks By Symlinks With Script"
 # Symlink git hooks
 for filename in ${CUSTOM_HOOK_DIR}/*; do
 	filename=$(basename ${filename})
-	ln -s "../../$CUSTOM_HOOK_DIR/${filename}" "$HOOK_DIR/${filename}"
+	ln -s "$CUSTOM_HOOK_DIR/${filename}" "$HOOK_DIR/${filename}"
 done
