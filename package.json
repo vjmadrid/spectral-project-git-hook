@@ -8,6 +8,7 @@
     "node:version": "echo 'nodejs version: ' && node -v ",
     "prepare:githooks:pre-commit:adhoc": "cp ./scripts/git/pre-commit .git/hooks/ && chmod +x .git/hooks/pre-commit && echo 'pre-commit hook copied!'",
     "prepare:githooks:pre-commit:script": "./scripts/git/prepare-githooks-pre-commit.npm.sh",
+    "delete:githooks:pre-commit": "rm -f .git/hooks/pre-commit && echo 'pre-commit hook removed!'",
     "prepare:githooks:link:all": "for file in `ls git-hooks`; do ln -s -f ../../git-hooks/${file} .git/hooks/${file}; done",
     "prepare:githooks:config": "git config core.hooksPath git-hooks",
     "prepare:githooks:config:reset": "git config core.hooksPath no-hooks",
