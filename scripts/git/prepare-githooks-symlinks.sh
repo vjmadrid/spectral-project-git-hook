@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # ### Configuration ###
 BASE_DIR=$(git rev-parse --show-toplevel)
