@@ -84,6 +84,7 @@ N/A
   * [Documentacion](https://stoplight.io/open-source/spectral)
 
 
+
 **Testing**
 
 * **jest** : Framework de Testing
