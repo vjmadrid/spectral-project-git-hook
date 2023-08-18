@@ -14,6 +14,7 @@
     "prepare:githooks:config": "git config core.hooksPath git-hooks",
     "prepare:githooks:config:reset": "git config core.hooksPath no-hooks",
     "test": "jest",
+    "test:script": "./scripts/run-tests.sh",
     "spectral:oas:lint:one": "spectral lint ./examples/example1.yaml",
     "spectral:oas:lint": "spectral lint ./examples/*",
     "spectral:oas:lint-warning-as-errors": "spectral lint -F warn ./examples/*"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-SONAR_URL="https://sonarqube.mycompany.com"
+SONAR_URL="https://sonarqube.acme.com"
 SONAR_API="/api/measures/component"
 SONAR_PROJECT_KEY="my-project"
 SONAR_METRIC="ncloc,complexity,bugs,vulnerabilities"
