@@ -17,7 +17,8 @@
     "test:script": "./scripts/run-tests.sh",
     "spectral:oas:lint:one": "spectral lint ./examples/example1.yaml",
     "spectral:oas:lint": "spectral lint ./examples/*",
-    "spectral:oas:lint-warning-as-errors": "spectral lint -F warn ./examples/*"
+    "spectral:oas:lint-warning-as-errors": "spectral lint -F warn ./examples/*",
+    "pre-commit:script": "./scripts/run-pre-commit.sh"
   },
   "author": "",
   "license": "ISC",

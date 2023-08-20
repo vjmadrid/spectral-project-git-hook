@@ -5,7 +5,7 @@
 
 
 # ### Execution ###
-echo "[*] Running pre-commit scipt (script directory)"
+echo "[*] Running pre-commit script (script directory)"
 
 
 # ***************
@@ -17,7 +17,7 @@ echo "[*] Running pre-commit scipt (script directory)"
 # Test Execution
 echo "- Executing tests before commit"
 
-.run-tests.sh
+npm run test
 
 RESULT=$?
 
