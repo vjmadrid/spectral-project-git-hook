@@ -13,6 +13,7 @@
     "prepare:githooks:link:all:script": "./scripts/git/prepare-githooks-symlinks.sh",
     "prepare:githooks:config": "git config core.hooksPath git-hooks",
     "prepare:githooks:config:reset": "git config core.hooksPath no-hooks",
+    "postinstall": "./scripts/git/prepare-githooks-pre-commit.npm.sh",
     "test": "jest",
     "test:script": "./scripts/run-tests.sh",
     "spectral:oas:lint:one": "spectral lint ./examples/example1.yaml",
