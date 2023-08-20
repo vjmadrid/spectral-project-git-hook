@@ -14,13 +14,8 @@
 - [Pre-Requisitos](#pre-requisitos)
 - [Instalación](#instalación)
 - [Configuración](#configuración)
-  - [Implementar comando de análisis de todos los ejemplos](#implementar-comando-de-análisis-de-todos-los-ejemplos)
+  - [Implementar comandos de análisis de todos los ejemplos con lintado](#implementar-comandos-de-análisis-de-todos-los-ejemplos-con-lintado)
 - [Uso](#uso)
-  - [Creación de un Git Hook: script ad-hoc](#creación-de-un-git-hook-script-ad-hoc)
-  - [Creación de un Git Hook: script enlazado](#creación-de-un-git-hook-script-enlazado)
-  - [Crear](#crear)
-    - [Para deshacer el cambio](#para-deshacer-el-cambio)
-  - [Crear](#crear-1)
 - [Autor](#autor)
 
 
@@ -29,10 +24,13 @@
 
 ## Descripción
 
-En este parte del repositorio se va a enseñar a utilizar la herramienta por línea de comando con diferentes escenarios explicados, de esta forma se verán todas las cosas que se pueden hacer
+Este **repositorio** se encarga de servir como una **estructura** de los **recursos utilizados** para los **artículos publicados** en la plataforma **enmilocalfunciona.io** relacionados con el uso de **Git Hooks** y basado en la serie de artículos **“Uso de Git Hooks”**
+
+* [Uso de Git Hooks (Parte 1)](https://www.enmilocalfunciona.io/uso-de-git-hooks-para-proyectos/): Artículo de introducción teórica al uso de Git Hooks
+* [Uso de Git Hooks (Parte 2)](https://www.enmilocalfunciona.io/uso-de-git-hooks-para-proyectos-parte-2/): Artículo de introducción práctica al uso de Git Hooks
 
 
-Este directorio se compone de:
+Este respositorio se compone de los siguientes directorios:
 
 * **examples/**: Directorio que contiene los ficheros a analizar
 * **config/**: Directorio que contiene toda la configuración del proyecto
@@ -54,9 +52,10 @@ Este directorio se compone de:
 
 
 
+
 ## Estado
 
-Este proyecto se encuentra en construcción
+Este proyecto se encuentra finalizado
 
 
 
@@ -103,10 +102,6 @@ N/A
 
 
 
-ln -s -f ./git-hooks/pre-commit .git/hooks/pre-commit
-
-
-
 
 ## Instalación
 
@@ -124,14 +119,6 @@ npm install
 5. Verificar que se ha instalado todo correctamente
 
 
-ln -s pre-commit.sh .git/hooks/pre-commit
-
-
-
-
-
-
-
 
 
 
@@ -139,13 +126,7 @@ ln -s pre-commit.sh .git/hooks/pre-commit
 
 
 
-
-
-
-
-
-
-### Implementar comando de análisis de todos los ejemplos
+### Implementar comandos de análisis de todos los ejemplos con lintado
 
 Pasos a seguir:
 
@@ -164,7 +145,6 @@ Pasos a seguir:
 
 Detalle:
 
-* **test**: Ejecutará el testing definido para el proyecto
 * **spectral:oas:lint:one**: Análisis de Spectral sobre un fichero seleccionado del directorio examples/
 * **spectral:oas:lint**: Análisis de Spectral sobre todos los ficheros del directorio examples/
 * **spectral:oas:lint-warning-as-errors**: Análisis de Spectral sobre todos los ficheros del directorio examples/ generando un error al detectar al menos un warning, es decir, para la ejecución con un warning
@@ -188,127 +168,7 @@ La propuesta del script se encuentra en : **docs/pre-commit.txt**
 >
 >Todos los ejemplos harán uso de la configuración de spectral de **.spectral.yml**
 
-
-### Creación de un Git Hook: script ad-hoc
-
-En este caso se va crear directamente el script de Git Hook
-
-Pasos a seguir:
-
-1. Abrir el directorio **.git/hooks** del respositorio seleccionado
-2. Localizar el archivo de ejemplo del hooks que se quiere implementar
-3. Eliminar la parte ".sample" del nombre del hook o bien crear un archivo nuevo
-4. Verificar el que el nombre del hook se corresponde con uno de los considerados validos. Por ejemplo: "pre-commit"
-5. Cambiar los permisos de ejecución del archivo
-
-```bash
-# Ejemplo para "pre-commit" desde el directorio
-chmod +x pre-commit
-
-# Ejemplo para "pre-commit" sobre el directorio
-chmod +x .git/hooks/pre-commit
-```
-
-6. Verificar que tiene el permiso asignado
-
-```bash
-ls -la .git/hooks
-```
-
-8. Elegir el lenguaje de scripting que se quiere utilizar para implementar el hook (Python, bash, shell, etc.)
-9. Editar el archivo con la implementación seleccionada
-
-
-
-
-### Creación de un Git Hook: script enlazado
-
-Soluciona el problema de la confirmacion anterior
-
-Pasos a seguir:
-
-1 Crear un directorio **git-hooks/** en el proyecto
-2 Copiar el archivo hook seleccionado del directorio **.git/hooks/** sin ".sample" o bien crea un fichero nuevo con el nombre del hook
-3.Acceder a **.git/hooks/**
-4. Crear un nuevo archivo vacío con el mismo nombre
-5. Crear un enlace símbolico entre ellos con el siguiente comando
-
-```bash
-ln -s -f ../git-hooks/[hook-name] .git/hooks/[hook-name]
-
-# Ejemplo para "pre-commit"
-ln -s -f ../git-hooks/pre-commit .git/hooks/pre-commit
-```
-
-6. Verificar que se ha creado el enlace simbólico
-
-```bash
-ls -la .git/hooks
-```
-
-
-
-
-### Crear
-
-A partir de la versión 2.9 se puede cambiar el directorio de configuración donde buscar los hooks
-
-Pasos a seguir:
-
-1. Arrancar un terminal
-2. Localizar el PATH el directorio del proyecto
-3. Verificar que el directorio "git-hooks" existe
-4. Ejecutar el siguiente comando
-
-```bash
-git config core.hooksPath ./git-hooks
-```
-
-#### Para deshacer el cambio
-
-
-```bash
-git config --unset core.hooksPath
-```
-
-```bash
-git config core.hooksPath .git/hooks
-```
-
-
-
-### Crear
-
-Para versiones anteriores de Git se pueden crear enlaces simbolicos entre el directorio ./git/hooks y el nuevo directorio de trabajo
-
-Pasos a seguir:
-
-1. Arrancar un terminal
-2. Localizar el PATH el directorio del proyecto
-3. Verificar que el directorio "git-hooks" existe
-4. Verificar que NO existe ningun enlace a pre-commit
-
-```bash
-ls -la .git/hooks
-```
-
-5. Ejecutar el siguiente comando
-
-```bash
-ln -sf ./git-hooks/pre-commit .git/hooks/pre-commit
-```
-
-
-6. Verificar que SÍ existe ningun enlace a pre-commit
-
-```bash
-ls -la .git/hooks
-```
-
-
-
-
-
+Todos los escenarios de uso serán explicados en el segúndo artículo
 
 
 
