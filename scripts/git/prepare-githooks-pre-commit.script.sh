@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # ### Configuration ###
+DEBUG=0
 BASE_DIR=$(git rev-parse --show-toplevel)
 HOOK_DIR="$BASE_DIR/.git/hooks"
 HOOK_NAME="pre-commit"
@@ -11,17 +12,19 @@ HOOK_NAME_FILE="$HOOK_NAME"
 # ### Execution ###
 echo "Executing prepare 'pre-commit' Git Hook With Script"
 
-echo "  Configuration"
-echo "    - PWD:$PWD"
-echo "    - Git Hook: $HOOK_NAME"
-echo "    - Git Hook Directory: $HOOK_DIR"
-echo "    - Base Directory: $BASE_DIR"
+if [ "$DEBUG" -eq "1" ]; then
+    echo "  Configuration"
+    echo "    - PWD:$PWD"
+    echo "    - Git Hook: $HOOK_NAME"
+    echo "    - Git Hook Directory: $HOOK_DIR"
+    echo "    - Base Directory: $BASE_DIR"
+fi
 
 
 # Copy the pre-commit hook file to the hooks directory
 
 # Option 1
-cp ./run-basic-pre-commit.sh ../../.git/hooks/pre-commit
+cp ./run-adv-pre-commit.sh ../../.git/hooks/pre-commit
 
 # Option 2
 # Copy the pre-commit hook file to the hooks directory
