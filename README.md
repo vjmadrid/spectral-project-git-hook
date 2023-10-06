@@ -4,6 +4,7 @@
 
 
 
+
 **Índice**
 - [Descripción](#descripción)
 - [Estado](#estado)
@@ -168,7 +169,7 @@ La propuesta del script se encuentra en : **docs/pre-commit.txt**
 >
 >Todos los ejemplos harán uso de la configuración de spectral de **.spectral.yml**
 
-Todos los escenarios de uso serán explicados en el segúndo artículo
+Todos los escenarios de uso serán explicados en el segundo artículo
 
 
 
