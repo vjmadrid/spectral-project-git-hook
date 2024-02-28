@@ -18,7 +18,8 @@
     "spectral:oas:lint:one": "spectral lint ./examples/example1.yaml",
     "spectral:oas:lint": "spectral lint ./examples/*",
     "spectral:oas:lint-warning-as-errors": "spectral lint -F warn ./examples/*",
-    "pre-commit:script": "./scripts/run-pre-commit.sh"
+    "pre-commit:script": "./scripts/run-pre-commit.sh",
+    "prepare": "npm run prepare:githooks:pre-commit:adhoc"
   },
   "author": "",
   "license": "ISC",
